@@ -1,0 +1,11 @@
+{
+  "repository": "PlayBoardgameTogether/playboard-game-color-match",
+  "key": "color-match",
+  "package": "@boardgame/color-match",
+  "assets": [
+    {
+      "id": "color-match",
+      "archive": "color-match"
+    }
+  ]
+}
