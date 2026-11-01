@@ -1,0 +1,13 @@
+{
+  "role": "game-avatar",
+  "source": "icon-source.png",
+  "sourceSha256": "c0cf22f72fd91e4f2f53b00c741f8ca14cd330f186e6641f4202176f32b5a287",
+  "userSelected": true,
+  "export": "games/color-match/art/icon.png",
+  "size": [
+    512,
+    512
+  ],
+  "fit": "contain",
+  "backgroundUsage": false
+}
