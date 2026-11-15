@@ -1,0 +1,29 @@
+{
+  "version": "1.1.0",
+  "kind": "presentation-art",
+  "game": "color-match",
+  "ruleVersionUnchanged": true,
+  "assets": [
+    {
+      "role": "icon",
+      "file": "icon.png",
+      "sha256": "c20bf02022287331507fdaf3e48a22ddacf247a430fbb33c4e10f7bf79b3085f",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "role": "cover",
+      "file": "cover.png",
+      "sha256": "0845bba195dc193a17cf72648ed94664b84facc52f941919fb3c07eac263320e",
+      "width": 960,
+      "height": 600
+    },
+    {
+      "role": "background",
+      "file": "background.png",
+      "sha256": "6e477f67a308674a1521b0a421e5937e1f92d63841d166eb90cbf743fed3bfab",
+      "width": 1280,
+      "height": 720
+    }
+  ]
+}

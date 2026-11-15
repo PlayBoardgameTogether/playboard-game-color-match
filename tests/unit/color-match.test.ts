@@ -1,12 +1,36 @@
 import { describe, expect, it } from 'vitest';
 import { DeterministicRng } from '@boardgame/game-sdk';
 import { colorMatchExtension, decideBasicColorMatch, type ColorState } from '../../games/color-match/src/server/index.js';
+import { colorMatchExtension as legacy } from '../../games/color-match/src/legacy/1.0.0/server/index.js';
 
 const seats = ['a', 'b', 'c', 'd'];
 const actor = (seatId: string) => ({ kind: 'seat' as const, seatId, controllerEpoch: 0 });
 const viewer = (seatId: string) => ({ kind: 'seat' as const, seatId });
 
 describe('Color Match rules', () => {
+  it('restores 1.0.0 saved states through the retained engine with identical public views and actions', () => {
+    expect(legacy.manifest.version).toBe('1.0.0');
+    expect(colorMatchExtension.manifest.version).toBe('1.1.0');
+    const rng = new DeterministicRng(25);
+    const oldRng = new DeterministicRng(25);
+    let current = colorMatchExtension.setup({ seats, options: {}, rng }).state;
+    let old = legacy.setup({ seats, options: {}, rng: oldRng }).state;
+    for (let turn = 0; turn < 80 && current.phase !== 'finished'; turn++) {
+      old = legacy.deserialize(colorMatchExtension.serialize(current));
+      const seatId = current.currentPlayerId!;
+      const mine = viewer(seatId);
+      const person = actor(seatId);
+      const view = colorMatchExtension.getView(current, mine);
+      expect(legacy.getView(old, mine)).toEqual(view);
+      const legalActions = colorMatchExtension.getDecisionContext!(current, mine)!.legalActions;
+      const action = decideBasicColorMatch({ view, legalActions });
+      const next = colorMatchExtension.applyAction(current, person, action, rng);
+      const previous = legacy.applyAction(old, person, action, oldRng);
+      expect(previous.state).toEqual(next.state);
+      expect(legacy.projectEvents(previous.events, mine)).toEqual(colorMatchExtension.projectEvents(next.events, mine));
+      current = next.state;
+    }
+  });
   it('deals exactly forty distinct cards, keeps hands private, and replays a seed', () => {
     const first = colorMatchExtension.setup({ seats, options: {}, rng: new DeterministicRng(123) }).state;
     const second = colorMatchExtension.setup({ seats, options: {}, rng: new DeterministicRng(123) }).state;
