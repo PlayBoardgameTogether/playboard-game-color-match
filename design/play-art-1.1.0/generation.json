@@ -1,0 +1,51 @@
+{
+  "version": "1.1.0",
+  "kind": "presentation-art",
+  "generator": "built-in image_gen",
+  "license": "GPL-3.0-only",
+  "rulesChanged": false,
+  "assets": [
+    {
+      "game": "color-match",
+      "role": "icon",
+      "prompt": "Use case: stylized-concept. NEW original square game avatar for Color Match. Sophisticated fine pixel art of four tactile playing cards fanned on navy felt: red 3, cobalt blue 2, golden yellow 5, emerald green 1. Soft daylight, natural wood, detailed square pixel clusters. No logos, UI, border or watermark.",
+      "original": "design/play-art-1.1.0/color-match/icon-original.png",
+      "source": "games/color-match/art/play-1.1.0/icon.png",
+      "originalSha256": "c0675d6523813439287abd2dbe62f1c95c39c456ca27532b71fc372a8da27f0d",
+      "sourceSha256": "c20bf02022287331507fdaf3e48a22ddacf247a430fbb33c4e10f7bf79b3085f",
+      "webp": "color-match-icon.webp",
+      "webpSha256": "e06499803e5004caaec1bdb7aaf57962306abcad2ff7677104db6bf8b9ec9830",
+      "width": 512,
+      "height": 512,
+      "bytes": 97092
+    },
+    {
+      "game": "color-match",
+      "role": "cover",
+      "prompt": "Use case: stylized-concept. NEW original landscape 16:10 premium board game illustration for PlayBoard. Fine richly detailed PIXEL ART, clearly visible square pixel clusters, tactile physical materials, refined soft light and natural shadows, cohesive navy felt and warm wood palette. Asset role: cover. ONLY four thick tactile playing cards fanned naturally together on dark navy woven tabletop: one red card with a large white 3, one blue card with a large white 2, one golden yellow card with a large white 5, and one green card with a large white 1. Rich miniature pixel border patterns on the cards. A matching simple facedown deck beside them. No other game pieces, no dice, no meeples, no island, no board, no miniature figures, no tiles. Not a UI screenshot. No border, no watermark, no title, no brand logo. Avoid blurry paint, flat vector and glossy casino art.",
+      "original": "design/play-art-1.1.0/color-match/cover-original.png",
+      "source": "games/color-match/art/play-1.1.0/cover.png",
+      "originalSha256": "2badb675b7568db3bd3a16eb32ef3ee1ef0c04176e0b3628bbaabe6b110b2edc",
+      "sourceSha256": "0845bba195dc193a17cf72648ed94664b84facc52f941919fb3c07eac263320e",
+      "webp": "color-match-cover.webp",
+      "webpSha256": "9fda54a202f782043b1711c98c71a2f2bffd9ca4f9fa6690a947a9762c504bec",
+      "width": 960,
+      "height": 600,
+      "bytes": 224744
+    },
+    {
+      "game": "color-match",
+      "role": "background",
+      "prompt": "Use case: stylized-concept. NEW original artwork for a premium PlayBoard board game platform. Sophisticated richly detailed fine PIXEL ART, visible tiny square pixel clusters, tactile physical board game pieces, refined material textures, soft daylight, restrained highlights and natural shadows, mature inviting mood, clear readable silhouette. Coordinated natural wood and dark navy with theme-specific colors. No UI, no paragraphs, no title, no brand logo, no watermark, no border. Avoid generic flat vector, blurry painterly style, glossy casino, low detail cartoon. Asset: wide 16:9 immersive background original art. Rich thematic environment extending around a softly lit tabletop in the foreground, detailed atmosphere at the edges, calm low contrast central area suitable behind game UI, no embedded interface. Subject: four thick red, cobalt blue, golden yellow and emerald green number cards with crisp white digits 1 to 5, original card design, navy woven tabletop, warm wood.",
+      "original": "design/play-art-1.1.0/color-match/background-original.png",
+      "source": "games/color-match/art/play-1.1.0/background.png",
+      "originalSha256": "94756f8316d22df23338d4f9e0fdae0064730df96e4621cec78493759bb1444f",
+      "sourceSha256": "6e477f67a308674a1521b0a421e5937e1f92d63841d166eb90cbf743fed3bfab",
+      "webp": "color-match-background.webp",
+      "webpSha256": "d4b72e97a4c5b06fd15596c10d9a23b7713282d29db1e705b9c0a436190f22da",
+      "width": 1280,
+      "height": 720,
+      "bytes": 394912
+    }
+  ]
+}

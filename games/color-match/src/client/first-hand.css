@@ -1,0 +1,83 @@
+/* Public practice presentation, independently styled from the full match board. */
+@layer play {
+  .first-hand-table { position: relative; isolation: isolate; border-radius: 20px; background: #162c3b; box-shadow: 0 14px 36px #1022341a; color: #edf5ff; padding: 25px 30px 19px; min-width: 0; overflow: hidden; }
+  .first-hand-background { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; opacity: .16; }
+  .first-hand-table::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, #102b3fd9, #172e3cb3); pointer-events: none; }
+  .first-hand-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 11px; color: #c0cfdd; }
+  .first-hand-header strong { color: #f0f6fe; font-size: 12px; font-weight: 650; }
+  .first-hand-header strong span { color: #a9bdcf; font-weight: 400; }
+  .first-hand-zones { display: grid; grid-template-columns: minmax(0,.7fr) minmax(0,1.3fr); gap: 26px; align-items: center; margin-top: 21px; }
+  .first-hand-zones p { margin: 0 0 15px; text-align: center; color: #c0d0df; font-size: 11px; }
+  .first-hand-pile { display: flex; align-items: center; flex-direction: column; }
+  .first-hand-cards { display: flex; gap: 10px; justify-content: center; min-height: 164px; align-items: center; }
+  .desktop-shell--play .first-hand-card,
+  .first-hand-card {
+    --card: #c8474f;
+    --card-deep: #a8333c;
+    display: block; position: relative; width: 102px; height: 148px; flex-shrink: 0; padding: 0;
+    border: 5px solid #fffbef; border-radius: 10px; background: var(--card); color: #fffdf3;
+    box-shadow: 0 5px 0 #091b295e, 0 9px 14px #06152260; font-family: inherit;
+    cursor: pointer; transform: rotate(-5deg); transition: transform 160ms, box-shadow 160ms;
+  }
+  .desktop-shell--play .first-hand-card:hover:not(:disabled) { background: var(--card); transform: translateY(-5px) rotate(-5deg); }
+  .desktop-shell--play .first-hand-card:nth-child(even) { transform: rotate(7deg) translateY(5px); }
+  .desktop-shell--play .first-hand-card:nth-child(even):hover:not(:disabled) { transform: translateY(-3px) rotate(7deg); }
+  .desktop-shell--play .first-hand-card[aria-pressed='true'] { transform: translateY(-12px) rotate(-3deg); box-shadow: 0 0 0 3px #a8d8ff, 0 12px 18px #06152260; }
+  .desktop-shell--play .first-hand-card:disabled { opacity: 1; cursor: default; }
+  .desktop-shell--play .first-hand-card--blue,
+  .first-hand-card--blue { --card: #3974ba; --card-deep: #285890; }
+  .desktop-shell--play .first-hand-card--yellow,
+  .first-hand-card--yellow { --card: #b58723; --card-deep: #88651c; }
+  .desktop-shell--play .first-hand-card--green,
+  .first-hand-card--green { --card: #388765; --card-deep: #246649; }
+  .first-hand-number { position: absolute; inset: 17% 15%; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 2px solid #fff6dc7a; background: var(--card-deep); font-size: 77px; font-weight: 800; font-style: italic; line-height: 1; padding-right: 4px; }
+  .first-hand-corner { position: absolute; left: 7px; top: 5px; display: flex; flex-direction: column; font-size: 18px; line-height: 1; font-weight: 800; z-index: 1; }
+  .first-hand-corner small { font-size: 8px; margin-top: 4px; font-weight: 500; }
+  .first-hand-corner--reverse { inset: auto 7px 5px auto; transform: rotate(180deg); }
+  .first-hand-hint { position: absolute; left: 50%; bottom: -12px; transform: translateX(-50%); white-space: nowrap; font-size: 8px; background: #f5fbf2; color: #24613d; border: 1px solid #c0d8ca; padding: 4px 7px; border-radius: 5px; z-index: 2; }
+  .desktop-shell--play .first-hand-card--public { width: 84px; height: 126px; transform: rotate(-8deg); cursor: default; }
+  .first-hand-card--public .first-hand-number { font-size: 61px; }
+  .first-hand-feedback { color: #c6d9e8; font-size: 12px; text-align: center; line-height: 1.7; min-height: 40px; margin: 18px 0 0; }
+  .first-hand-table[data-practice-complete='true'] .first-hand-feedback { color: #bce6c7; }
+  .first-hand-actions { display: flex; justify-content: center; gap: 8px; margin-top: 8px; }
+  .desktop-shell--play .first-hand-actions > button { min-height: 44px; padding: 10px 25px; background: #335ffd; border-color: #335ffd; color: #fff; border-radius: 8px; font-size: 13px; }
+  .desktop-shell--play .first-hand-actions > button.secondary { color: #edf5ff; background: #ffffff0c; border-color: #a3bed04d; }
+  .first-hand-bottom { display: flex; justify-content: space-between; gap: 8px; margin-top: 17px; border-top: 1px solid #afcad323; padding-top: 13px; color: #a2b8ca; font-size: 10px; }
+  @media (min-width: 761px) and (max-width: 1100px) {
+    .first-hand-table { padding: 20px 18px; }
+    .desktop-shell--play .first-hand-card { width: 86px; height: 126px; }
+    .desktop-shell--play .first-hand-card--public { width: 72px; height: 108px; }
+    .first-hand-number { font-size: 65px; }
+    .first-hand-card--public .first-hand-number { font-size: 52px; }
+    .first-hand-cards { min-height: 145px; gap: 8px; }
+    .first-hand-zones { gap: 14px; }
+    .first-hand-header { font-size: 10px; }
+  }
+  @media (max-width: 760px) {
+    .first-hand-table { border-radius: 16px; padding: 16px 15px; }
+    .first-hand-header { font-size: 9px; gap: 7px; }
+    .first-hand-header strong { font-size: 11px; }
+    .first-hand-zones { gap: 16px; margin-top: 16px; }
+    .first-hand-zones p { font-size: 10px; margin-bottom: 11px; }
+    .desktop-shell--play .first-hand-card { width: 77px; height: 114px; border-width: 4px; border-radius: 8px; }
+    .desktop-shell--play .first-hand-card--public { width: 63px; height: 96px; }
+    .first-hand-number { font-size: 59px; padding-right: 3px; }
+    .first-hand-card--public .first-hand-number { font-size: 47px; }
+    .first-hand-corner { font-size: 15px; top: 5px; left: 5px; }
+    .first-hand-corner--reverse { inset: auto 5px 5px auto; }
+    .first-hand-cards { gap: 6px; min-height: 126px; }
+    .first-hand-feedback { font-size: 11px; min-height: 38px; margin-top: 10px; }
+    .first-hand-actions { margin-top: 7px; gap: 6px; }
+    .desktop-shell--play .first-hand-actions > button { font-size: 12px; padding: 0 17px; }
+    .first-hand-bottom { margin-top: 12px; padding-top: 10px; font-size: 9px; }
+  }
+  @media (max-width: 359px) {
+    .desktop-shell--play .first-hand-card { width: 65px; height: 100px; }
+    .desktop-shell--play .first-hand-card--public { width: 56px; height: 87px; }
+    .first-hand-number { font-size: 49px; }
+    .first-hand-card--public .first-hand-number { font-size: 42px; }
+    .first-hand-corner { font-size: 13px; }
+    .first-hand-header strong span { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .desktop-shell--play .first-hand-card { transition: none; } }
+}

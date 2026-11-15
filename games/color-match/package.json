@@ -1,7 +1,7 @@
 {
   "name": "@boardgame/color-match",
   "license": "GPL-3.0-only",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "exports": {
     "./rules": {
@@ -23,6 +23,10 @@
     "./assets": {
       "production": "./dist/shared/assets.js",
       "default": "./src/shared/assets.ts"
+    },
+    "./legacy/1.0.0": {
+      "production": "./dist/legacy/1.0.0/server/index.js",
+      "default": "./src/legacy/1.0.0/server/index.ts"
     }
   },
   "scripts": {

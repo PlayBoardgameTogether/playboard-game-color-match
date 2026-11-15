@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { manifestSchema } from '@boardgame/game-sdk';
 
 export const manifest = manifestSchema.parse({
-  id: 'color-match', version: '1.0.0', sdkRange: '^0.1.0', contentVersion: '1.0.0',
+  id: 'color-match', version: '1.1.0', sdkRange: '^0.1.0', contentVersion: '1.0.0',
   name: 'Color Match', description: '按颜色或数字出牌，数字 5 可指定对手摸牌。',
   players: { min: 2, max: 4 }, mode: 'rules-driven',
   capabilities: ['private-view', 'turn-based'],
